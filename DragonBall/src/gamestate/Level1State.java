@@ -123,6 +123,8 @@ public class Level1State extends GameState {
 		// clear screen
 		g.setColor(Color.white);
 		g.fillRect(0, 0, GamePanel.WIDTH, GamePanel.HEIGHT);
+		
+		bg.draw(g);
 
 		// draw tilemap
 		tileMap.draw(g);

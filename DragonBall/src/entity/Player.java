@@ -373,7 +373,7 @@ public class Player extends MapObject {
 				facingRight = true;
 			}
 			if (left) {
-				facingRight = true;
+				facingRight = false;
 			}
 		}
 	}
