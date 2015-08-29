@@ -6,13 +6,12 @@ import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
-import entity.Enemy;
-import entity.Player;
-import entity.enemy.Dragon;
-import entity.enemy.Slugger;
 import main.GamePanel;
 import tilemap.Background;
 import tilemap.TileMap;
+import entity.Enemy;
+import entity.Player;
+import entity.enemy.Slugger;
 
 public class Level1State extends GameState {
 
@@ -22,7 +21,7 @@ public class Level1State extends GameState {
 	private Player player;
 
 	private ArrayList<Enemy> enemies;
-
+	
 	public Level1State(GameStateManager gsm) {
 		this.gsm = gsm;
 		init();
@@ -39,7 +38,7 @@ public class Level1State extends GameState {
 		bg = new Background("/Backgrounds/grassbg1.gif", 0.1);
 		player = new Player(tileMap);
 		player.setPosition(100, 100);
-
+		
 		populateEnemies();
 	}
 
@@ -53,9 +52,9 @@ public class Level1State extends GameState {
 			enemies.add(s);
 		}
 		
-		Dragon g=new Dragon(tileMap);
+/*		Dragon g=new Dragon(tileMap);
 		g.setPosition(200, 200);
-		enemies.add(g);
+		enemies.add(g);*/
 	}
 
 	@Override
@@ -66,7 +65,7 @@ public class Level1State extends GameState {
 		tileMap.setPosition(GamePanel.WIDTH / 2 - player.getx(), GamePanel.HEIGHT / 2 - player.gety());
 		// set background
 		bg.setPosition(tileMap.getx(), tileMap.gety());
-
+		
 		// update all enemy
 		for (int i = 0; i < enemies.size(); i++) {
 			Enemy e = enemies.get(i);
